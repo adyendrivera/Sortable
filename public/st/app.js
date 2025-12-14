@@ -1,4 +1,6 @@
-var example1 = document.getElementById('example1'),
+import Sortable from '../sortable.js'
+
+let example1 = document.getElementById('example1'),
 	example2Left = document.getElementById('example2-left'),
 	example2Right = document.getElementById('example2-right'),
 	example3Left = document.getElementById('example3-left'),
@@ -78,33 +80,33 @@ new Sortable(example6, {
 });
 
 // Example 7 - Thresholds
-var example7Sortable = new Sortable(example7, {
+let example7Sortable = new Sortable(example7, {
     animation: 150
 });
 
 
-var example7SwapThreshold = 1;
-var example7SwapThresholdInput = document.getElementById('example7SwapThresholdInput');
-var example7SwapThresholdCode = document.getElementById('example7SwapThresholdCode');
-var example7SwapThresholdIndicators = [].slice.call(document.querySelectorAll('.swap-threshold-indicator'));
+let example7SwapThreshold = 1;
+let example7SwapThresholdInput = document.getElementById('example7SwapThresholdInput');
+let example7SwapThresholdCode = document.getElementById('example7SwapThresholdCode');
+let example7SwapThresholdIndicators = [].slice.call(document.querySelectorAll('.swap-threshold-indicator'));
 
-var example7InvertSwapInput = document.getElementById('example7InvertSwapInput');
-var example7InvertSwapCode = document.getElementById('example7InvertSwapCode');
-var example7InvertedSwapThresholdIndicators = [].slice.call(document.querySelectorAll('.inverted-swap-threshold-indicator'));
+let example7InvertSwapInput = document.getElementById('example7InvertSwapInput');
+let example7InvertSwapCode = document.getElementById('example7InvertSwapCode');
+let example7InvertedSwapThresholdIndicators = [].slice.call(document.querySelectorAll('.inverted-swap-threshold-indicator'));
 
-var example7Squares = [].slice.call(document.querySelectorAll('.square'));
+let example7Squares = [].slice.call(document.querySelectorAll('.square'));
 
-var activeIndicators = example7SwapThresholdIndicators;
+let activeIndicators = example7SwapThresholdIndicators;
 
-var example7DirectionInput = document.getElementById('example7DirectionInput');
-var example7SizeProperty = 'width';
+let example7DirectionInput = document.getElementById('example7DirectionInput');
+let example7SizeProperty = 'width';
 
 
 function renderThresholdWidth(evt) {
 	example7SwapThreshold = Number(evt.target.value);
 	example7SwapThresholdCode.innerHTML = evt.target.value.indexOf('.') > -1 ? (evt.target.value + '0000').slice(0, 4) : evt.target.value;
 
-	for (var i = 0; i < activeIndicators.length; i++) {
+	for (let i = 0; i < activeIndicators.length; i++) {
 		activeIndicators[i].style[example7SizeProperty] = (evt.target.value * 100) /
 			(activeIndicators == example7SwapThresholdIndicators ? 1 : 2) + '%';
 	}
@@ -119,7 +121,7 @@ example7InvertSwapInput.addEventListener('change', function(evt) {
 	example7Sortable.option('invertSwap', evt.target.checked);
 
 
-	for (var i = 0; i < activeIndicators.length; i++) {
+	for (let i = 0; i < activeIndicators.length; i++) {
 		activeIndicators[i].style.display = 'none';
 	}
 
@@ -143,7 +145,7 @@ example7InvertSwapInput.addEventListener('change', function(evt) {
 });
 
 function renderDirection(evt) {
-	for (var i = 0; i < example7Squares.length; i++) {
+	for (let i = 0; i < example7Squares.length; i++) {
 		example7Squares[i].style.display = evt.target.value === 'h' ? 'inline-block' : 'block';
 	}
 
@@ -195,10 +197,10 @@ new Sortable(gridDemo, {
 });
 
 // Nested demo
-var nestedSortables = [].slice.call(document.querySelectorAll('.nested-sortable'));
+let nestedSortables = [].slice.call(document.querySelectorAll('.nested-sortable'));
 
 // Loop through each nested sortable element
-for (var i = 0; i < nestedSortables.length; i++) {
+for (let i = 0; i < nestedSortables.length; i++) {
 	new Sortable(nestedSortables[i], {
 		group: 'nested',
 		animation: 150,
