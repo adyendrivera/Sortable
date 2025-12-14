@@ -1,7 +1,27 @@
 {
-	"name": "sortablejs",
-	"exportName": "Sortable",
-	"version": "1.15.6",
+	"name": "sortable",
+	"version": "0.1.0",
+    "license": "MIT",
+    "engines": {
+        "node": ">=24",
+        "pnpm": ">=10"
+    },
+	"packageManager": "pnpm@10.13.1",
+	"description": "JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery required. Supports Meteor, AngularJS, React, Polymer, Vue, Knockout and any CSS library, e.g. Bootstrap.",
+	"main": "./Sortable.min.js",
+	"module": "modular/sortable.esm.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/adyendrivera/Sortablee.git"
+    },
+	"files": [
+        "dist/"
+    ],
+    "keywords": [
+        "sortable",
+        "reorder",
+        "drag"
+    ],
 	"devDependencies": {
 		"@babel/core": "^7.4.4",
 		"@babel/plugin-transform-object-assign": "^7.2.0",
@@ -15,9 +35,6 @@
 		"testcafe-reporter-xunit": "^2.1.0",
 		"uglify-js": "^3.5.12"
 	},
-	"description": "JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery required. Supports Meteor, AngularJS, React, Polymer, Vue, Knockout and any CSS library, e.g. Bootstrap.",
-	"main": "./Sortable.min.js",
-	"module": "modular/sortable.esm.js",
 	"scripts": {
 		"build:umd": "set NODE_ENV=umd&& rollup -c ./scripts/umd-build.js",
 		"build:umd:watch": "set NODE_ENV=umd&& rollup -w -c ./scripts/umd-build.js",
@@ -28,30 +45,4 @@
 		"test:compat": "node ./scripts/test-compat.js",
 		"test": "node ./scripts/test.js"
 	},
-	"maintainers": [
-		"Konstantin Lebedev <ibnRubaXa@gmail.com>",
-		"Owen Mills <owen23355@gmail.com>"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/SortableJS/Sortable.git"
-	},
-	"files": [
-		"Sortable.js",
-		"Sortable.min.js",
-		"modular/",
-		"src/"
-	],
-	"keywords": [
-		"sortable",
-		"reorder",
-		"drag",
-		"meteor",
-		"angular",
-		"ng-sortable",
-		"react",
-		"vue",
-		"mixin"
-	],
-	"license": "MIT"
 }
