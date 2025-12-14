@@ -1,7 +1,7 @@
 ## MultiDrag Plugin
 This plugin allows users to select multiple items within a sortable at once, and drag them as one item.
 Once placed, the items will unfold into their original order, but all beside each other at the new position.
-[Read More](https://github.com/SortableJS/Sortable/wiki/Dragging-Multiple-Items-in-Sortable)
+[Read More](https://github.com/adyendrivera/Sortable/wiki/Dragging-Multiple-Items-in-Sortable)
 
 Demo: https://jsbin.com/wopavom/edit?js,output
 
