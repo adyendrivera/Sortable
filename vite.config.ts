@@ -11,9 +11,8 @@ export default {
         minify: false,
         lib: {
             entry: ["entry/entry-complete"],
-            name: "Sortable",
-            fileName: (format) => `sortable.${format}.js`,
-            formats: ["es", "umd", "cjs"],
+            fileName: `sortable`,
+            formats: ["es"],
         },
         emptyOutDir: true,
     },
