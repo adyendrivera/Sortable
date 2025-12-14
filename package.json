@@ -23,26 +23,18 @@
         "drag"
     ],
 	"devDependencies": {
-		"@babel/core": "^7.4.4",
-		"@babel/plugin-transform-object-assign": "^7.2.0",
-		"@babel/preset-env": "^7.4.4",
-		"rollup": "^1.11.3",
-		"rollup-plugin-babel": "^4.3.2",
-		"rollup-plugin-json": "^4.0.0",
-		"rollup-plugin-node-resolve": "^5.0.0",
+		"http-server": "14.1.1",
+        "vite": "6.3.6",
 		"testcafe": "^1.3.1",
 		"testcafe-browser-provider-saucelabs": "^1.7.0",
-		"testcafe-reporter-xunit": "^2.1.0",
-		"uglify-js": "^3.5.12"
+		"testcafe-reporter-xunit": "^2.1.0"
 	},
 	"scripts": {
-		"build:umd": "set NODE_ENV=umd&& rollup -c ./scripts/umd-build.js",
-		"build:umd:watch": "set NODE_ENV=umd&& rollup -w -c ./scripts/umd-build.js",
-		"build:es": "set NODE_ENV=es&& rollup -c ./scripts/esm-build.js",
-		"build:es:watch": "set NODE_ENV=es&& rollup -w -c ./scripts/esm-build.js",
-		"minify": "node ./scripts/minify.js",
-		"build": "npm run build:es && npm run build:umd && npm run minify",
+		"build": "vite build && pnpm run build:copy",
+		"build:copy": "cp dist/sortable.umd.js public/sortable.js",
+		"dev": "http-server public -p 3000",
+		"dev1": "vite",
 		"test:compat": "node ./scripts/test-compat.js",
 		"test": "node ./scripts/test.js"
-	},
+	}
 }
