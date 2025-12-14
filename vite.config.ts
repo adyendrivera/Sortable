@@ -1,19 +1,22 @@
 import type { UserConfig } from "vite";
 
 export default {
-    server: {
-        host: "0.0.0.0",
-        port: 3000,
-    },
+    // server: {
+    //     host: "0.0.0.0",
+    //     port: 3000,
+    // },
 
     build: {
-        target: "esnext",
+        // target: "esnext",
         outDir: "dist",
+        minify: false,
         lib: {
-            entry: ["src/Sortable.js"],
-            name: "@adyen/sortable",
+            entry: ["entry/entry-complete"],
+            // name: "@adyen/sortable",
+            // name: "Sortable",
             fileName: (format) => `sortable.${format}.js`,
-            formats: ["es", "umd"],
+            // formats: ["es", "umd", "cjs"],
+            formats: ["es"],
         },
         emptyOutDir: true,
     },

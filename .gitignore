@@ -1,6 +1,10 @@
-node_modules
-mock.png
-.*.sw*
-.build*
-jquery.fn.*
-.idea/
+dist
+node_modules/
+*.tgz
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local

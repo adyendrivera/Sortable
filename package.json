@@ -2,6 +2,11 @@
     "name": "@adyen/sortable",
     "version": "0.1.0",
     "license": "MIT",
+    "engines": {
+        "node": ">=24",
+        "pnpm": ">=10"
+    },
+    "packageManager": "pnpm@10.13.1",
     "description": "JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery required. Supports Meteor, AngularJS, React, Polymer, Vue, Knockout and any CSS library, e.g. Bootstrap.",
     "main": "dist/sortable.umd.js",
     "module": "dist/sortable.es.js",
@@ -18,10 +23,12 @@
         "drag"
     ],
     "scripts": {
-        "build": "vite build",
+        "build": "vite build && pnpm run build:copy",
+        "build:copy": "cp dist/sortable.umd.js public/sortable.js",
         "dev": "vite",
         "build:watch": "set NODE_ENV=es&& rollup -w -c ./scripts/esm-build.js",
         "dev:http": "http-server public -p 3000",
+        "dev:http1": "http-server dist -p 3000",
         "test:compat": "node ./scripts/test-compat.js",
         "test": "node ./scripts/test.js"
     },
